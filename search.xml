@@ -21,7 +21,12 @@
   <entry>
     <title>The First Post</title>
     <url>/2020/08/16/The-First-Post/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="The-First-Post"><a href="#The-First-Post" class="headerlink" title="The First Post"></a>The First Post</h1><p>自从三月份搭完Hexo 就一直搁置着。</p>
+<p>这是第一个post</p>
+]]></content>
+      <categories>
+        <category>-categories</category>
+      </categories>
       <tags>
         <tag>-live</tag>
       </tags>
