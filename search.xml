@@ -33,4 +33,80 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>梳理计算机网络中的各种协议</title>
+    <url>/2020/10/11/post/</url>
+    <content><![CDATA[<p>在复习计算机网络的时候总是觉得计网，</p>
+<p>学习计网接触最多的就是协议</p>
+<a id="more"></a>
+
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本篇文章基于计算机网络五层模型（应用层、传输层、网络层、数据链路层、物理层）将总自定向下的方式，对计算机网络中各层的协议进行梳理。在开始之前，我们要想明白两个概念，就是可靠传输和面向连接。</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可靠传输</td>
+<td></td>
+</tr>
+<tr>
+<td>面向连接</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><table>
+<thead>
+<tr>
+<th>应用层</th>
+<th>FTP数据连接</th>
+<th>FTP控制连接</th>
+<th>TELNET</th>
+<th>SMTP</th>
+<th>DNS</th>
+<th>TFTP</th>
+<th>HTTP</th>
+<th>POPO3</th>
+<th>SNMP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用传输层协议</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>UDP</td>
+<td>UDP</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>常用端口号</td>
+<td>20</td>
+<td>21</td>
+<td>23</td>
+<td>25</td>
+<td>53</td>
+<td>69</td>
+<td>80</td>
+<td>110</td>
+<td>161</td>
+</tr>
+</tbody></table>
+<h2 id="域名系统（DNS）"><a href="#域名系统（DNS）" class="headerlink" title="域名系统（DNS）"></a>域名系统（DNS）</h2><h2 id="文件传输协议（FTP）"><a href="#文件传输协议（FTP）" class="headerlink" title="文件传输协议（FTP）"></a>文件传输协议（FTP）</h2><h2 id="邮件系统（SMTP-POP3-IMAP-MIME）"><a href="#邮件系统（SMTP-POP3-IMAP-MIME）" class="headerlink" title="邮件系统（SMTP, POP3, IMAP, MIME）"></a>邮件系统（SMTP, POP3, IMAP, MIME）</h2><h2 id="超文本传输协议（HTTP）"><a href="#超文本传输协议（HTTP）" class="headerlink" title="超文本传输协议（HTTP）"></a>超文本传输协议（HTTP）</h2><h2 id="动态主机配置协议（DHCP）"><a href="#动态主机配置协议（DHCP）" class="headerlink" title="动态主机配置协议（DHCP）"></a>动态主机配置协议（DHCP）</h2><h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><h2 id="用户数据报协议（UDP）"><a href="#用户数据报协议（UDP）" class="headerlink" title="用户数据报协议（UDP）"></a>用户数据报协议（UDP）</h2><h2 id="传输控制协议（TCP）"><a href="#传输控制协议（TCP）" class="headerlink" title="传输控制协议（TCP）"></a>传输控制协议（TCP）</h2><h2 id="可靠传输的实现"><a href="#可靠传输的实现" class="headerlink" title="可靠传输的实现"></a>可靠传输的实现</h2><h3 id="停等协议"><a href="#停等协议" class="headerlink" title="停等协议"></a>停等协议</h3><h3 id="后退N帧协议（GBN）"><a href="#后退N帧协议（GBN）" class="headerlink" title="后退N帧协议（GBN）"></a>后退N帧协议（GBN）</h3><h3 id="选择重传协议（SR）"><a href="#选择重传协议（SR）" class="headerlink" title="选择重传协议（SR）"></a>选择重传协议（SR）</h3><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="地址解析协议（ARP）"><a href="#地址解析协议（ARP）" class="headerlink" title="地址解析协议（ARP）"></a>地址解析协议（ARP）</h2><h2 id="网际控制报文协议（ICMP）"><a href="#网际控制报文协议（ICMP）" class="headerlink" title="网际控制报文协议（ICMP）"></a>网际控制报文协议（ICMP）</h2><h2 id="网组管理协议（IGMP）"><a href="#网组管理协议（IGMP）" class="headerlink" title="网组管理协议（IGMP）"></a>网组管理协议（IGMP）</h2><h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><h3 id="路由信息协议（RIP）"><a href="#路由信息协议（RIP）" class="headerlink" title="路由信息协议（RIP）"></a>路由信息协议（RIP）</h3><h3 id="开放最短路径协议（OSPF）"><a href="#开放最短路径协议（OSPF）" class="headerlink" title="开放最短路径协议（OSPF）"></a>开放最短路径协议（OSPF）</h3><h3 id="边界网关协议（BGP）"><a href="#边界网关协议（BGP）" class="headerlink" title="边界网关协议（BGP）"></a>边界网关协议（BGP）</h3><h3 id="三种路由协议的比较"><a href="#三种路由协议的比较" class="headerlink" title="三种路由协议的比较"></a>三种路由协议的比较</h3><h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="信道划分介质访问控制"><a href="#信道划分介质访问控制" class="headerlink" title="信道划分介质访问控制"></a>信道划分介质访问控制</h2><h3 id="频分多路复用"><a href="#频分多路复用" class="headerlink" title="频分多路复用"></a>频分多路复用</h3><h3 id="时分多路复用"><a href="#时分多路复用" class="headerlink" title="时分多路复用"></a>时分多路复用</h3><h3 id="波分多路复用"><a href="#波分多路复用" class="headerlink" title="波分多路复用"></a>波分多路复用</h3><h3 id="码分多路复用"><a href="#码分多路复用" class="headerlink" title="码分多路复用"></a>码分多路复用</h3><h2 id="随机访问介质访问控制"><a href="#随机访问介质访问控制" class="headerlink" title="随机访问介质访问控制"></a>随机访问介质访问控制</h2><h3 id="ALOHA协议"><a href="#ALOHA协议" class="headerlink" title="ALOHA协议"></a>ALOHA协议</h3><h4 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h4><h4 id="时隙ALOHA协议"><a href="#时隙ALOHA协议" class="headerlink" title="时隙ALOHA协议"></a>时隙ALOHA协议</h4><h3 id="CSMA协议"><a href="#CSMA协议" class="headerlink" title="CSMA协议"></a>CSMA协议</h3><h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h3><h3 id="CSMA-CA协议"><a href="#CSMA-CA协议" class="headerlink" title="CSMA/CA协议"></a>CSMA/CA协议</h3><h2 id="轮询访问介质访问控制：令牌传递协议"><a href="#轮询访问介质访问控制：令牌传递协议" class="headerlink" title="轮询访问介质访问控制：令牌传递协议"></a>轮询访问介质访问控制：令牌传递协议</h2><h2 id="点对点协议（PPP）"><a href="#点对点协议（PPP）" class="headerlink" title="点对点协议（PPP）"></a>点对点协议（PPP）</h2><h2 id="高级数据链路控制（HDLC）"><a href="#高级数据链路控制（HDLC）" class="headerlink" title="高级数据链路控制（HDLC）"></a>高级数据链路控制（HDLC）</h2><h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] 王道论坛. 2021年计算机网络考研复习指导[M]. 北京：电子工业出版社，2020.</p>
+<p>[2] 王相林. 计算机网络：原理、技术与应用[M]. 北京：机械工业出版社，2013.</p>
+]]></content>
+      <categories>
+        <category>-计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>协议</tag>
+        <tag>考研408</tag>
+      </tags>
+  </entry>
 </search>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/LOGO-2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/LOGO-2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="在复习计算机网络的时候总是觉得计网， 学习计网接触最多的就是协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梳理计算机网络中的各种协议">
+<meta property="og:url" content="http://yoursite.com/2020/10/11/post/index.html">
+<meta property="og:site_name" content="Jimmy&#39;s Blog">
+<meta property="og:description" content="在复习计算机网络的时候总是觉得计网， 学习计网接触最多的就是协议">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-11T07:27:38.000Z">
+<meta property="article:modified_time" content="2020-10-11T08:27:54.210Z">
+<meta property="article:author" content="Jimmy Shi">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="协议">
+<meta property="article:tag" content="考研408">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/10/11/post/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>梳理计算机网络中的各种协议 | Jimmy's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jimmy's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">淡泊明志，宁静致远。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/11/post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jimmy Shi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          梳理计算机网络中的各种协议
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-11 15:27:38 / 修改时间：16:27:54" itemprop="dateCreated datePublished" datetime="2020-10-11T15:27:38+08:00">2020-10-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">-计算机网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在复习计算机网络的时候总是觉得计网，</p>
+<p>学习计网接触最多的就是协议</p>
+<a id="more"></a>
+
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本篇文章基于计算机网络五层模型（应用层、传输层、网络层、数据链路层、物理层）将总自定向下的方式，对计算机网络中各层的协议进行梳理。在开始之前，我们要想明白两个概念，就是可靠传输和面向连接。</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可靠传输</td>
+<td></td>
+</tr>
+<tr>
+<td>面向连接</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><table>
+<thead>
+<tr>
+<th>应用层</th>
+<th>FTP数据连接</th>
+<th>FTP控制连接</th>
+<th>TELNET</th>
+<th>SMTP</th>
+<th>DNS</th>
+<th>TFTP</th>
+<th>HTTP</th>
+<th>POPO3</th>
+<th>SNMP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用传输层协议</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>UDP</td>
+<td>UDP</td>
+<td>TCP</td>
+<td>TCP</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>常用端口号</td>
+<td>20</td>
+<td>21</td>
+<td>23</td>
+<td>25</td>
+<td>53</td>
+<td>69</td>
+<td>80</td>
+<td>110</td>
+<td>161</td>
+</tr>
+</tbody></table>
+<h2 id="域名系统（DNS）"><a href="#域名系统（DNS）" class="headerlink" title="域名系统（DNS）"></a>域名系统（DNS）</h2><h2 id="文件传输协议（FTP）"><a href="#文件传输协议（FTP）" class="headerlink" title="文件传输协议（FTP）"></a>文件传输协议（FTP）</h2><h2 id="邮件系统（SMTP-POP3-IMAP-MIME）"><a href="#邮件系统（SMTP-POP3-IMAP-MIME）" class="headerlink" title="邮件系统（SMTP, POP3, IMAP, MIME）"></a>邮件系统（SMTP, POP3, IMAP, MIME）</h2><h2 id="超文本传输协议（HTTP）"><a href="#超文本传输协议（HTTP）" class="headerlink" title="超文本传输协议（HTTP）"></a>超文本传输协议（HTTP）</h2><h2 id="动态主机配置协议（DHCP）"><a href="#动态主机配置协议（DHCP）" class="headerlink" title="动态主机配置协议（DHCP）"></a>动态主机配置协议（DHCP）</h2><h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><h2 id="用户数据报协议（UDP）"><a href="#用户数据报协议（UDP）" class="headerlink" title="用户数据报协议（UDP）"></a>用户数据报协议（UDP）</h2><h2 id="传输控制协议（TCP）"><a href="#传输控制协议（TCP）" class="headerlink" title="传输控制协议（TCP）"></a>传输控制协议（TCP）</h2><h2 id="可靠传输的实现"><a href="#可靠传输的实现" class="headerlink" title="可靠传输的实现"></a>可靠传输的实现</h2><h3 id="停等协议"><a href="#停等协议" class="headerlink" title="停等协议"></a>停等协议</h3><h3 id="后退N帧协议（GBN）"><a href="#后退N帧协议（GBN）" class="headerlink" title="后退N帧协议（GBN）"></a>后退N帧协议（GBN）</h3><h3 id="选择重传协议（SR）"><a href="#选择重传协议（SR）" class="headerlink" title="选择重传协议（SR）"></a>选择重传协议（SR）</h3><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="地址解析协议（ARP）"><a href="#地址解析协议（ARP）" class="headerlink" title="地址解析协议（ARP）"></a>地址解析协议（ARP）</h2><h2 id="网际控制报文协议（ICMP）"><a href="#网际控制报文协议（ICMP）" class="headerlink" title="网际控制报文协议（ICMP）"></a>网际控制报文协议（ICMP）</h2><h2 id="网组管理协议（IGMP）"><a href="#网组管理协议（IGMP）" class="headerlink" title="网组管理协议（IGMP）"></a>网组管理协议（IGMP）</h2><h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><h3 id="路由信息协议（RIP）"><a href="#路由信息协议（RIP）" class="headerlink" title="路由信息协议（RIP）"></a>路由信息协议（RIP）</h3><h3 id="开放最短路径协议（OSPF）"><a href="#开放最短路径协议（OSPF）" class="headerlink" title="开放最短路径协议（OSPF）"></a>开放最短路径协议（OSPF）</h3><h3 id="边界网关协议（BGP）"><a href="#边界网关协议（BGP）" class="headerlink" title="边界网关协议（BGP）"></a>边界网关协议（BGP）</h3><h3 id="三种路由协议的比较"><a href="#三种路由协议的比较" class="headerlink" title="三种路由协议的比较"></a>三种路由协议的比较</h3><h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="信道划分介质访问控制"><a href="#信道划分介质访问控制" class="headerlink" title="信道划分介质访问控制"></a>信道划分介质访问控制</h2><h3 id="频分多路复用"><a href="#频分多路复用" class="headerlink" title="频分多路复用"></a>频分多路复用</h3><h3 id="时分多路复用"><a href="#时分多路复用" class="headerlink" title="时分多路复用"></a>时分多路复用</h3><h3 id="波分多路复用"><a href="#波分多路复用" class="headerlink" title="波分多路复用"></a>波分多路复用</h3><h3 id="码分多路复用"><a href="#码分多路复用" class="headerlink" title="码分多路复用"></a>码分多路复用</h3><h2 id="随机访问介质访问控制"><a href="#随机访问介质访问控制" class="headerlink" title="随机访问介质访问控制"></a>随机访问介质访问控制</h2><h3 id="ALOHA协议"><a href="#ALOHA协议" class="headerlink" title="ALOHA协议"></a>ALOHA协议</h3><h4 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h4><h4 id="时隙ALOHA协议"><a href="#时隙ALOHA协议" class="headerlink" title="时隙ALOHA协议"></a>时隙ALOHA协议</h4><h3 id="CSMA协议"><a href="#CSMA协议" class="headerlink" title="CSMA协议"></a>CSMA协议</h3><h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h3><h3 id="CSMA-CA协议"><a href="#CSMA-CA协议" class="headerlink" title="CSMA/CA协议"></a>CSMA/CA协议</h3><h2 id="轮询访问介质访问控制：令牌传递协议"><a href="#轮询访问介质访问控制：令牌传递协议" class="headerlink" title="轮询访问介质访问控制：令牌传递协议"></a>轮询访问介质访问控制：令牌传递协议</h2><h2 id="点对点协议（PPP）"><a href="#点对点协议（PPP）" class="headerlink" title="点对点协议（PPP）"></a>点对点协议（PPP）</h2><h2 id="高级数据链路控制（HDLC）"><a href="#高级数据链路控制（HDLC）" class="headerlink" title="高级数据链路控制（HDLC）"></a>高级数据链路控制（HDLC）</h2><h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] 王道论坛. 2021年计算机网络考研复习指导[M]. 北京：电子工业出版社，2020.</p>
+<p>[2] 王相林. 计算机网络：原理、技术与应用[M]. 北京：机械工业出版社，2013.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/username">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"># 计算机网络</a>
+              <a href="/tags/%E5%8D%8F%E8%AE%AE/" rel="tag"># 协议</a>
+              <a href="/tags/%E8%80%83%E7%A0%94408/" rel="tag"># 考研408</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/16/The-First-Post/" rel="prev" title="The First Post">
+      <i class="fa fa-chevron-left"></i> The First Post
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">2.</span> <span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#域名系统（DNS）"><span class="nav-number">2.1.</span> <span class="nav-text">域名系统（DNS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件传输协议（FTP）"><span class="nav-number">2.2.</span> <span class="nav-text">文件传输协议（FTP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邮件系统（SMTP-POP3-IMAP-MIME）"><span class="nav-number">2.3.</span> <span class="nav-text">邮件系统（SMTP, POP3, IMAP, MIME）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超文本传输协议（HTTP）"><span class="nav-number">2.4.</span> <span class="nav-text">超文本传输协议（HTTP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态主机配置协议（DHCP）"><span class="nav-number">2.5.</span> <span class="nav-text">动态主机配置协议（DHCP）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传输层"><span class="nav-number">3.</span> <span class="nav-text">传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户数据报协议（UDP）"><span class="nav-number">3.1.</span> <span class="nav-text">用户数据报协议（UDP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输控制协议（TCP）"><span class="nav-number">3.2.</span> <span class="nav-text">传输控制协议（TCP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可靠传输的实现"><span class="nav-number">3.3.</span> <span class="nav-text">可靠传输的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#停等协议"><span class="nav-number">3.3.1.</span> <span class="nav-text">停等协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后退N帧协议（GBN）"><span class="nav-number">3.3.2.</span> <span class="nav-text">后退N帧协议（GBN）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择重传协议（SR）"><span class="nav-number">3.3.3.</span> <span class="nav-text">选择重传协议（SR）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">4.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#地址解析协议（ARP）"><span class="nav-number">4.1.</span> <span class="nav-text">地址解析协议（ARP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网际控制报文协议（ICMP）"><span class="nav-number">4.2.</span> <span class="nav-text">网际控制报文协议（ICMP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网组管理协议（IGMP）"><span class="nav-number">4.3.</span> <span class="nav-text">网组管理协议（IGMP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由协议"><span class="nav-number">4.4.</span> <span class="nav-text">路由协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由信息协议（RIP）"><span class="nav-number">4.4.1.</span> <span class="nav-text">路由信息协议（RIP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放最短路径协议（OSPF）"><span class="nav-number">4.4.2.</span> <span class="nav-text">开放最短路径协议（OSPF）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边界网关协议（BGP）"><span class="nav-number">4.4.3.</span> <span class="nav-text">边界网关协议（BGP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种路由协议的比较"><span class="nav-number">4.4.4.</span> <span class="nav-text">三种路由协议的比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-number">5.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信道划分介质访问控制"><span class="nav-number">5.1.</span> <span class="nav-text">信道划分介质访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#频分多路复用"><span class="nav-number">5.1.1.</span> <span class="nav-text">频分多路复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时分多路复用"><span class="nav-number">5.1.2.</span> <span class="nav-text">时分多路复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#波分多路复用"><span class="nav-number">5.1.3.</span> <span class="nav-text">波分多路复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#码分多路复用"><span class="nav-number">5.1.4.</span> <span class="nav-text">码分多路复用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机访问介质访问控制"><span class="nav-number">5.2.</span> <span class="nav-text">随机访问介质访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ALOHA协议"><span class="nav-number">5.2.1.</span> <span class="nav-text">ALOHA协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#纯ALOHA协议"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">纯ALOHA协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时隙ALOHA协议"><span class="nav-number">5.2.1.2.</span> <span class="nav-text">时隙ALOHA协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA协议"><span class="nav-number">5.2.2.</span> <span class="nav-text">CSMA协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CD协议"><span class="nav-number">5.2.3.</span> <span class="nav-text">CSMA&#x2F;CD协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CA协议"><span class="nav-number">5.2.4.</span> <span class="nav-text">CSMA&#x2F;CA协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮询访问介质访问控制：令牌传递协议"><span class="nav-number">5.3.</span> <span class="nav-text">轮询访问介质访问控制：令牌传递协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点协议（PPP）"><span class="nav-number">5.4.</span> <span class="nav-text">点对点协议（PPP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级数据链路控制（HDLC）"><span class="nav-number">5.5.</span> <span class="nav-text">高级数据链路控制（HDLC）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理层"><span class="nav-number">6.</span> <span class="nav-text">物理层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jimmy Shi"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jimmy Shi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmy Shi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
