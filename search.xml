@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>矩阵各种公式归纳整理</title>
+    <url>/2020/10/13/post-1/</url>
+    <content><![CDATA[<p>矩阵这一章节涉及的公式和定理非常的多，而且极易混淆。熟悉这些公式定义，对后期解题起到非常重要的作用，所以有必要对这一章节的公式定理做一个归纳总结。</p>
+<a id="more"></a>
+<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>A的转置的转置等于A本身</p>
+<script type="math/tex; mode=display">
+(A^T)^T=A</script><p>A+B的转置等于A的转置加B的转置</p>
+<script type="math/tex; mode=display">
+(A+B)^T=A^T+B^T</script><h1 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h1><h1 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h1>]]></content>
+      <categories>
+        <category>线性代数</category>
+      </categories>
+      <tags>
+        <tag>矩阵公式</tag>
+        <tag>考研数学</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KMP算法总结</title>
+    <url>/2020/10/25/KMP%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>数据结构复习过程中，KMP算法我前前后后复习了不下三遍。但是总是结果一段时间之后就忘了。今天觉得把这个知识点归纳一下。</p>
+<a id="more"></a>
+<h1 id="朴素模式匹配"><a href="#朴素模式匹配" class="headerlink" title="朴素模式匹配"></a>朴素模式匹配</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXLEN 255</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> ch[MAXLEN];</span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串第一个字符下表从1的位置开始存放。</span></span><br><span class="line"><span class="comment">//S为主串，T为模式串。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index</span><span class="params">(SString S,SString T)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=S.length&amp;&amp;j&lt;=T.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(S.ch[i]==T.[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i=i-j+<span class="number">2</span>;</span><br><span class="line">            j=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j&gt;T.length)<span class="keyword">return</span> i-T.length;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><h1 id="Next数组"><a href="#Next数组" class="headerlink" title="Next数组"></a>Next数组</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模式串S</td>
+<td>g</td>
+<td>o</td>
+<td>g</td>
+<td>o</td>
+<td>i</td>
+</tr>
+<tr>
+<td>next</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="前缀后缀匹配"><a href="#前缀后缀匹配" class="headerlink" title="前缀后缀匹配"></a>前缀后缀匹配</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取next数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_next</span><span class="params">(SString T,<span class="keyword">int</span> next[])</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">0</span>;</span><br><span class="line">	next[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;T.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">0</span>||T.[i]==T.[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">            next[i]=j;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">            j=next[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>考研中对KMP算法的要求只要手速next数组就行了，所以代码简单看看就行</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//KMP算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Index_KMP</span><span class="params">(SString S,SString T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> next[T.length+<span class="number">1</span>];</span><br><span class="line">    get_next(T,next);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=S.length&amp;&amp;j&lt;=T.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(S.ch[i]==T.[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j=next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j&gt;T.length)<span class="keyword">return</span> i-T.length;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度为O(m+n) </p>
+<h1 id="Nextval数组"><a href="#Nextval数组" class="headerlink" title="Nextval数组"></a>Nextval数组</h1><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nextval</span><span class="params">(SString T,<span class="keyword">int</span> next[])</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>考研408</tag>
+        <tag>KMP算法</tag>
+        <tag>字符串模式匹配</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数中秩的总结</title>
+    <url>/2020/10/14/post-2/</url>
+    <content><![CDATA[<p>在线性代数中，秩这个概念几乎是贯穿始终。无论是解方程组</p>
+<a id="more"></a>
+<h1 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h1><h1 id="向量组的秩"><a href="#向量组的秩" class="headerlink" title="向量组的秩"></a>向量组的秩</h1><h1 id="三秩相等"><a href="#三秩相等" class="headerlink" title="三秩相等"></a>三秩相等</h1><h1 id="二次型的秩"><a href="#二次型的秩" class="headerlink" title="二次型的秩"></a>二次型的秩</h1><h1 id="与秩有关的公式、定理、推理"><a href="#与秩有关的公式、定理、推理" class="headerlink" title="与秩有关的公式、定理、推理"></a>与秩有关的公式、定理、推理</h1>]]></content>
+      <categories>
+        <category>线性代数</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+        <tag>线性代数</tag>
+        <tag>秩</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The First Post</title>
     <url>/2020/08/16/The-First-Post/</url>
     <content><![CDATA[<h1 id="The-First-Post"><a href="#The-First-Post" class="headerlink" title="The First Post"></a>The First Post</h1><p>从大一开始就想要搭建自己的博客。起初的想法是自己手撸代码，前端后台数据库一点点地搭建起来。之后看了别人的博客才发现自己太天真，大家的博客并不是代码一点一点地拼起来的。尤其是看了我舍友TOM搭建的博客之后，我便放弃手撸代码的想法，转而使用博客框架。TOM的博客搭的不错，内容也十分丰富，让我深受启发。这里PO个传送门：<a href="http://newbeetom.top/" target="_blank" rel="noopener">http://newbeetom.top/</a></p>
@@ -19,13 +107,28 @@
       </tags>
   </entry>
   <entry>
+    <title>时间复杂度的分析总结</title>
+    <url>/2020/10/18/post-3/</url>
+    <content><![CDATA[<p>数据结构的第一个大头，就是时间复杂度的分析。题目往往是给个程序片段，让我们分析时间复杂度。</p>
+<a id="more"></a>
+<h1 id="非递归函数时间复杂度"><a href="#非递归函数时间复杂度" class="headerlink" title="非递归函数时间复杂度"></a>非递归函数时间复杂度</h1><h1 id="递归函数时间复杂度"><a href="#递归函数时间复杂度" class="headerlink" title="递归函数时间复杂度"></a>递归函数时间复杂度</h1>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>考研408</tag>
+        <tag>时间复杂度</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>梳理计算机网络中的各种协议</title>
     <url>/2020/10/11/post/</url>
     <content><![CDATA[<p>在复习计算机网络的时候总是觉得计网，</p>
 <p>学习计网接触最多的就是协议</p>
 <a id="more"></a>
-
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本篇文章基于计算机网络五层模型（应用层、传输层、网络层、数据链路层、物理层）将总自定向下的方式，对计算机网络中各层的协议进行梳理。在开始之前，我们要想明白两个概念，就是可靠传输和面向连接。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -33,16 +136,19 @@
 <th>解释</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>可靠传输</td>
 <td></td>
 </tr>
 <tr>
 <td>面向连接</td>
-<td></td>
 </tr>
-</tbody></table>
-<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><table>
+</tbody>
+</table>
+</div>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>应用层</th>
@@ -57,7 +163,8 @@
 <th>SNMP</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>使用传输层协议</td>
 <td>TCP</td>
 <td>TCP</td>
@@ -81,50 +188,377 @@
 <td>110</td>
 <td>161</td>
 </tr>
-</tbody></table>
-<h2 id="域名系统（DNS）"><a href="#域名系统（DNS）" class="headerlink" title="域名系统（DNS）"></a>域名系统（DNS）</h2><h2 id="文件传输协议（FTP）"><a href="#文件传输协议（FTP）" class="headerlink" title="文件传输协议（FTP）"></a>文件传输协议（FTP）</h2><h2 id="邮件系统（SMTP-POP3-IMAP-MIME）"><a href="#邮件系统（SMTP-POP3-IMAP-MIME）" class="headerlink" title="邮件系统（SMTP, POP3, IMAP, MIME）"></a>邮件系统（SMTP, POP3, IMAP, MIME）</h2><h2 id="超文本传输协议（HTTP）"><a href="#超文本传输协议（HTTP）" class="headerlink" title="超文本传输协议（HTTP）"></a>超文本传输协议（HTTP）</h2><h2 id="动态主机配置协议（DHCP）"><a href="#动态主机配置协议（DHCP）" class="headerlink" title="动态主机配置协议（DHCP）"></a>动态主机配置协议（DHCP）</h2><h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><h2 id="用户数据报协议（UDP）"><a href="#用户数据报协议（UDP）" class="headerlink" title="用户数据报协议（UDP）"></a>用户数据报协议（UDP）</h2><h2 id="传输控制协议（TCP）"><a href="#传输控制协议（TCP）" class="headerlink" title="传输控制协议（TCP）"></a>传输控制协议（TCP）</h2><h2 id="可靠传输的实现"><a href="#可靠传输的实现" class="headerlink" title="可靠传输的实现"></a>可靠传输的实现</h2><h3 id="停等协议"><a href="#停等协议" class="headerlink" title="停等协议"></a>停等协议</h3><h3 id="后退N帧协议（GBN）"><a href="#后退N帧协议（GBN）" class="headerlink" title="后退N帧协议（GBN）"></a>后退N帧协议（GBN）</h3><h3 id="选择重传协议（SR）"><a href="#选择重传协议（SR）" class="headerlink" title="选择重传协议（SR）"></a>选择重传协议（SR）</h3><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="地址解析协议（ARP）"><a href="#地址解析协议（ARP）" class="headerlink" title="地址解析协议（ARP）"></a>地址解析协议（ARP）</h2><h2 id="网际控制报文协议（ICMP）"><a href="#网际控制报文协议（ICMP）" class="headerlink" title="网际控制报文协议（ICMP）"></a>网际控制报文协议（ICMP）</h2><h2 id="网组管理协议（IGMP）"><a href="#网组管理协议（IGMP）" class="headerlink" title="网组管理协议（IGMP）"></a>网组管理协议（IGMP）</h2><h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><h3 id="路由信息协议（RIP）"><a href="#路由信息协议（RIP）" class="headerlink" title="路由信息协议（RIP）"></a>路由信息协议（RIP）</h3><h3 id="开放最短路径协议（OSPF）"><a href="#开放最短路径协议（OSPF）" class="headerlink" title="开放最短路径协议（OSPF）"></a>开放最短路径协议（OSPF）</h3><h3 id="边界网关协议（BGP）"><a href="#边界网关协议（BGP）" class="headerlink" title="边界网关协议（BGP）"></a>边界网关协议（BGP）</h3><h3 id="三种路由协议的比较"><a href="#三种路由协议的比较" class="headerlink" title="三种路由协议的比较"></a>三种路由协议的比较</h3><h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="信道划分介质访问控制"><a href="#信道划分介质访问控制" class="headerlink" title="信道划分介质访问控制"></a>信道划分介质访问控制</h2><h3 id="频分多路复用"><a href="#频分多路复用" class="headerlink" title="频分多路复用"></a>频分多路复用</h3><h3 id="时分多路复用"><a href="#时分多路复用" class="headerlink" title="时分多路复用"></a>时分多路复用</h3><h3 id="波分多路复用"><a href="#波分多路复用" class="headerlink" title="波分多路复用"></a>波分多路复用</h3><h3 id="码分多路复用"><a href="#码分多路复用" class="headerlink" title="码分多路复用"></a>码分多路复用</h3><h2 id="随机访问介质访问控制"><a href="#随机访问介质访问控制" class="headerlink" title="随机访问介质访问控制"></a>随机访问介质访问控制</h2><h3 id="ALOHA协议"><a href="#ALOHA协议" class="headerlink" title="ALOHA协议"></a>ALOHA协议</h3><h4 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h4><h4 id="时隙ALOHA协议"><a href="#时隙ALOHA协议" class="headerlink" title="时隙ALOHA协议"></a>时隙ALOHA协议</h4><h3 id="CSMA协议"><a href="#CSMA协议" class="headerlink" title="CSMA协议"></a>CSMA协议</h3><h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h3><h3 id="CSMA-CA协议"><a href="#CSMA-CA协议" class="headerlink" title="CSMA/CA协议"></a>CSMA/CA协议</h3><h2 id="轮询访问介质访问控制：令牌传递协议"><a href="#轮询访问介质访问控制：令牌传递协议" class="headerlink" title="轮询访问介质访问控制：令牌传递协议"></a>轮询访问介质访问控制：令牌传递协议</h2><h2 id="点对点协议（PPP）"><a href="#点对点协议（PPP）" class="headerlink" title="点对点协议（PPP）"></a>点对点协议（PPP）</h2><h2 id="高级数据链路控制（HDLC）"><a href="#高级数据链路控制（HDLC）" class="headerlink" title="高级数据链路控制（HDLC）"></a>高级数据链路控制（HDLC）</h2><h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] 王道论坛. 2021年计算机网络考研复习指导[M]. 北京：电子工业出版社，2020.</p>
+</tbody>
+</table>
+</div>
+<h2 id="域名系统（DNS）"><a href="#域名系统（DNS）" class="headerlink" title="域名系统（DNS）"></a>域名系统（DNS）</h2><h2 id="文件传输协议（FTP）"><a href="#文件传输协议（FTP）" class="headerlink" title="文件传输协议（FTP）"></a>文件传输协议（FTP）</h2><h2 id="邮件系统（SMTP-POP3-IMAP-MIME）"><a href="#邮件系统（SMTP-POP3-IMAP-MIME）" class="headerlink" title="邮件系统（SMTP, POP3, IMAP, MIME）"></a>邮件系统（SMTP, POP3, IMAP, MIME）</h2><h2 id="超文本传输协议（HTTP）"><a href="#超文本传输协议（HTTP）" class="headerlink" title="超文本传输协议（HTTP）"></a>超文本传输协议（HTTP）</h2><h2 id="动态主机配置协议（DHCP）"><a href="#动态主机配置协议（DHCP）" class="headerlink" title="动态主机配置协议（DHCP）"></a>动态主机配置协议（DHCP）</h2><h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><h2 id="用户数据报协议（UDP）"><a href="#用户数据报协议（UDP）" class="headerlink" title="用户数据报协议（UDP）"></a>用户数据报协议（UDP）</h2><h3 id="UDP概述"><a href="#UDP概述" class="headerlink" title="UDP概述"></a>UDP概述</h3><p>UDP是面向无连接的不可靠</p>
+<h3 id="UDP首部格式"><a href="#UDP首部格式" class="headerlink" title="UDP首部格式"></a>UDP首部格式</h3><h2 id="传输控制协议（TCP）"><a href="#传输控制协议（TCP）" class="headerlink" title="传输控制协议（TCP）"></a>传输控制协议（TCP）</h2><h3 id="TCP报文段"><a href="#TCP报文段" class="headerlink" title="TCP报文段"></a>TCP报文段</h3><h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p>TCP的连接，就是我们熟悉的三次握手</p>
+<p>A:”在吗在吗？我有东西要给你”</p>
+<p>B:”在的在的，你发吧”</p>
+<p>A:”那我开始发了”</p>
+<ol>
+<li>SYN=1，seq=x</li>
+<li>SYN=1，ACK=1，seq=y，ack=x+1</li>
+<li>ACK=1，seq=x+1，ack=y+1</li>
+</ol>
+<h3 id="TCP连接释放"><a href="#TCP连接释放" class="headerlink" title="TCP连接释放"></a>TCP连接释放</h3><p>连接释放就是四次握手</p>
+<p>A:”好了我发完了”</p>
+<p>B:”好吧，那我准备走了”</p>
+<p>/////这里等一会，万一A还有话要说，那就继续进入数据传送的状态</p>
+<p>B:”好了，那我走了拜拜”</p>
+<p>A:”你走吧，拜拜”</p>
+<ol>
+<li>FIN=1，seq=u</li>
+<li>ACK=1，seq=v，ack=u+1</li>
+<li>FIN=1，ACK=1，seq=w，ack=u+1</li>
+<li>ACK=1，seq=u+1，ack=w+1</li>
+</ol>
+<h2 id="可靠传输的实现"><a href="#可靠传输的实现" class="headerlink" title="可靠传输的实现"></a>可靠传输的实现</h2><h3 id="停等协议"><a href="#停等协议" class="headerlink" title="停等协议"></a>停等协议</h3><p>接收方、发送方个一个窗口</p>
+<h3 id="后退N帧协议（GBN）"><a href="#后退N帧协议（GBN）" class="headerlink" title="后退N帧协议（GBN）"></a>后退N帧协议（GBN）</h3><p>接受方一个窗口，发送方最多(2^n)-1个窗口</p>
+<h3 id="选择重传协议（SR）"><a href="#选择重传协议（SR）" class="headerlink" title="选择重传协议（SR）"></a>选择重传协议（SR）</h3><p>发送方和接受方最大2^(n-1)个窗口</p>
+<h2 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h2><h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><h4 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h4><h4 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h4><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h2><h3 id="IPv4分组格式"><a href="#IPv4分组格式" class="headerlink" title="IPv4分组格式"></a>IPv4分组格式</h3><p>IPv4首部格式如下所示。首部分为固定部分和可变部分，其中固定部分为20B。</p>
+<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201124143517358.png" alt="image-20201124143517358"></p>
+<p>几个重要字段含义</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>版本</td>
+<td>指IP的版本，一般为4</td>
+<td></td>
+</tr>
+<tr>
+<td>首部长度</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>标识</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="地址解析协议（ARP）"><a href="#地址解析协议（ARP）" class="headerlink" title="地址解析协议（ARP）"></a>地址解析协议（ARP）</h2><p>实现IP地址到MAC地址的映射。</p>
+<p>每台注意的有一个ARP高速缓存用于存放本局域网上各主机和路由器的IP到MAC的映射表。</p>
+<p>A向局域网内主机B发送IP数据包工作原理：</p>
+<p>1、先在A的ARP高速缓存中查找是否存在主机B的IP地址，有跳2，无跳4</p>
+<p>2、使用MAC地址为FF-FF-FF-FF-FF-FF-FF的帧用来封装并广播ARP请求分组，使同一局域网力所有的主机收到ARP请求。</p>
+<p>3、主机B收到A的ARP请求后向A发送响应ARP分组</p>
+<p>4、将相应的MAC地址写入MAC帧中</p>
+<h2 id="网际控制报文协议（ICMP）"><a href="#网际控制报文协议（ICMP）" class="headerlink" title="网际控制报文协议（ICMP）"></a>网际控制报文协议（ICMP）</h2><h3 id="差错报告报文"><a href="#差错报告报文" class="headerlink" title="差错报告报文"></a>差错报告报文</h3><ol>
+<li>终点不可达：不能交付数据</li>
+<li>源点抑制：拥塞的时候</li>
+<li>时间超时：数据包TTL为0</li>
+<li>参数问题：部首字段有不正确的值</li>
+<li>改变路由：</li>
+</ol>
+<h3 id="不发送差错报告报文"><a href="#不发送差错报告报文" class="headerlink" title="不发送差错报告报文"></a>不发送差错报告报文</h3><p>对ICMP差错报告报文不再发送ICMP差错报告报文（不能套娃）</p>
+<p>对第一个分片的数据报片所有的后续数据报都不发送ICMP差错报告报文</p>
+<p>对具有组播地址的数据包都不发送ICMP差错报告报文</p>
+<p>对具有特殊地址（127.0.0.1或0.0.0.0）的数据报不发送ICMP差错报告报文</p>
+<h3 id="询问报文"><a href="#询问报文" class="headerlink" title="询问报文"></a>询问报文</h3><ol>
+<li>会送请求和回答报文</li>
+<li>时间戳请求和回答报文</li>
+<li>掩码地址请求和回答报文</li>
+<li>路由器询问和通告报文</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ping</td>
+<td>ICMP请求和回答报文</td>
+<td>应用层</td>
+</tr>
+<tr>
+<td>Tracert</td>
+<td>ICMP时间超时奥文</td>
+<td>网络层</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ping直接使用ICMP 未使用TCP或UDP</p>
+<h2 id="网组管理协议（IGMP）"><a href="#网组管理协议（IGMP）" class="headerlink" title="网组管理协议（IGMP）"></a>网组管理协议（IGMP）</h2><h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><h3 id="路由信息协议（RIP）"><a href="#路由信息协议（RIP）" class="headerlink" title="路由信息协议（RIP）"></a>路由信息协议（RIP）</h3><h4 id="RIP的规定"><a href="#RIP的规定" class="headerlink" title="RIP的规定"></a>RIP的规定</h4><h4 id="RIP特点"><a href="#RIP特点" class="headerlink" title="RIP特点"></a>RIP特点</h4><h4 id="距离向量算法"><a href="#距离向量算法" class="headerlink" title="距离向量算法"></a>距离向量算法</h4><p>RIP是应用层协议，使用UDP传输(端口520)</p>
+<p>好消息传的快、怀消息传的慢</p>
+<h3 id="开放最短路径协议（OSPF）"><a href="#开放最短路径协议（OSPF）" class="headerlink" title="开放最短路径协议（OSPF）"></a>开放最短路径协议（OSPF）</h3><h4 id="OSPF五种分组"><a href="#OSPF五种分组" class="headerlink" title="OSPF五种分组"></a>OSPF五种分组</h4><p>问候分组</p>
+<p>数据库描述分组</p>
+<p>链路状态请求分组</p>
+<p>链路状态更新分组</p>
+<p>链路状态确认分组</p>
+<h3 id="边界网关协议（BGP）"><a href="#边界网关协议（BGP）" class="headerlink" title="边界网关协议（BGP）"></a>边界网关协议（BGP）</h3><h3 id="三种路由协议的比较"><a href="#三种路由协议的比较" class="headerlink" title="三种路由协议的比较"></a>三种路由协议的比较</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RIP</th>
+<th>OSPF</th>
+<th>BGP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>应用层</td>
+<td>网络层</td>
+<td>应用层</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>内部</td>
+<td>内部</td>
+<td>外部</td>
+</tr>
+<tr>
+<td>路由算法</td>
+<td>距离-向量</td>
+<td>链路状态</td>
+<td>路径-向量</td>
+</tr>
+<tr>
+<td>传递协议</td>
+<td>UDP</td>
+<td>IP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>路径选择</td>
+<td>跳数最少</td>
+<td>代价最低</td>
+<td>较好，非最佳</td>
+</tr>
+<tr>
+<td>交换节点</td>
+<td>和本届点相邻的路由器交换信息</td>
+<td>网络总所有的路由器(洪泛式)</td>
+<td>和本节点相邻的路由器交换信息</td>
+</tr>
+<tr>
+<td>交换内容</td>
+<td>当前本路由器知道的全部信息，即自己的路由表</td>
+<td>与本路由器相邻的所有路由器的链路状态</td>
+<td>首次：整个路由表<br />非首次：变化部分</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="信道划分介质访问控制"><a href="#信道划分介质访问控制" class="headerlink" title="信道划分介质访问控制"></a>信道划分介质访问控制</h2><h3 id="频分多路复用"><a href="#频分多路复用" class="headerlink" title="频分多路复用"></a>频分多路复用</h3><p>将物理信道的总带宽，分割成若干个与传输单个信号带宽相同的子信道</p>
+<p>每个子信道的带宽不必相同，单它们的总和不能超过信道总带宽</p>
+<h3 id="时分多路复用"><a href="#时分多路复用" class="headerlink" title="时分多路复用"></a>时分多路复用</h3><p>将物理信道按时间分成若干个时间片，轮流使用信道。</p>
+<h3 id="波分多路复用"><a href="#波分多路复用" class="headerlink" title="波分多路复用"></a>波分多路复用</h3><p>光的频分复用。</p>
+<h3 id="码分多路复用"><a href="#码分多路复用" class="headerlink" title="码分多路复用"></a>码分多路复用</h3><p>采用不同的编码来区分各路原始信号</p>
+<h4 id="码分多址（CDMA）"><a href="#码分多址（CDMA）" class="headerlink" title="码分多址（CDMA）"></a>码分多址（CDMA）</h4><p>直接举例子讲</p>
+<p>现在有三个站点，A站、B站和C站。A站和B站同时向C站发送数据。</p>
+<p>A的码片为（00011011），则（00011011）表示发送1，（11100100）表示发送0。</p>
+<p>B的码片为（00101110），则（00101110）表示发送1，（11010001）表示发送0。</p>
+<p>发送0时，发送码片的原序列，发送1时，发送码片的反码。</p>
+<p>接下来，我们要将这些码片序列看成向量，通常我们码片序列中的0写成-1，1写成+1，两个不同站点的码片序列正交</p>
+<p>我们令S为A的码片向量，T为B的码片向量</p>
+<p>S=(-1,-1,-1,+1,+1,-1,+1,+1)，T=(-1,-1,+1,-1,+1,+1,+1,-1)，则</p>
+<script type="math/tex; mode=display">
+S \cdot T= \frac {1} {m} \sum_{i=0}^mS_iT_i</script><p>那么，如果A要发送1，他就发送序列为S，B发送0，它的发送序列为-T</p>
+<p>我们对两个向量进行加和之后进行发送即S+(-T)=S-T</p>
+<p>在C站，我们要解析出A站的数据，就用向量S与(S-T)进行规格化内积计算，即S(S-T)=1，即A站发出的数据就是1。</p>
+<p>同理，我们要解析出B站的数据，就用向量T与(S-T)进行规格化内积计算，即T(S-T)=-1，即B站发出的数据就是0。</p>
+<h2 id="随机访问介质访问控制"><a href="#随机访问介质访问控制" class="headerlink" title="随机访问介质访问控制"></a>随机访问介质访问控制</h2><h3 id="ALOHA协议"><a href="#ALOHA协议" class="headerlink" title="ALOHA协议"></a>ALOHA协议</h3><h4 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h4><p>想发就发，不进行检测，如果一段时间未收到确认，</p>
+<h4 id="时隙ALOHA协议"><a href="#时隙ALOHA协议" class="headerlink" title="时隙ALOHA协议"></a>时隙ALOHA协议</h4><h3 id="CSMA协议"><a href="#CSMA协议" class="headerlink" title="CSMA协议"></a>CSMA协议</h3><p>CSMA，载波监听多路访问（Carrier Sense Multiple Access）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>信道状态</th>
+<th>1-坚持</th>
+<th>非坚持</th>
+<th>p-坚持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空闲</td>
+<td>立即发送</td>
+<td>立即发送</td>
+<td>以p的概率发送数据，1-p的概率等下一个时隙发送数据</td>
+</tr>
+<tr>
+<td>忙</td>
+<td>继续坚持监听</td>
+<td>放弃监听，等一个随机时间后再监听</td>
+<td>继续监听，直到信道空闲</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h3><p>CD：Collision Detection，碰撞检测</p>
+<p>如果在经历过2t时间后没有</p>
+<h3 id="CSMA-CA协议"><a href="#CSMA-CA协议" class="headerlink" title="CSMA/CA协议"></a>CSMA/CA协议</h3><p>CSMA/CD与CSMA/CA的区别</p>
+<h2 id="轮询访问介质访问控制：令牌传递协议"><a href="#轮询访问介质访问控制：令牌传递协议" class="headerlink" title="轮询访问介质访问控制：令牌传递协议"></a>轮询访问介质访问控制：令牌传递协议</h2><h2 id="点对点协议（PPP）"><a href="#点对点协议（PPP）" class="headerlink" title="点对点协议（PPP）"></a>点对点协议（PPP）</h2><h2 id="高级数据链路控制（HDLC）"><a href="#高级数据链路控制（HDLC）" class="headerlink" title="高级数据链路控制（HDLC）"></a>高级数据链路控制（HDLC）</h2><h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p>物理层就没有什么协议了。物理层的任务就是直接把链路层的数据转化为可以在信道中传输的信号，然后进行传输，也不在进行任何封装。那么这里我们要懂得就是物理层如何把数据转化为可在物理信道种传输的信号的，如何进行传输的。这就涉及了编码与调制、数模转化、交换方式的知识点。</p>
+<p>还有两个重要的定理，奈奎斯特定理和香浓定理。（因为数据传输的速率不可能无限大，速度越快，一般失真率越高，容易造成码间串扰，所以需要有条件限制最大的传输率，于是就有了这两个定理）</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>码元：</strong>用白话文讲就是离散信号中的电平状态。例如我们常见的二进制数，有0和1两种状态，就有两种电平信号进行表示。如果是四进制，信号中就有四种电平状态。k进制码元有k种电平状态。</p>
+<p>用二进制位表示k进制码元，有以下公式</p>
+<script type="math/tex; mode=display">
+用于表示码元的进制位数=\log_{2}k</script><p>如是四进制码元，可用2位二进制表示；如是八进制码元，可用3位二进制表示；如是十六进制码元，可用4位二进制表示……</p>
+<p><strong>码元传输率（也称波特率）：</strong>单位时间内传输码元的个数，单位：波特(Baud)，波特是哈利波特的波特，Baud不是Harry Potter的Potter。</p>
+<p><strong>比特率（又称信息传输率）：</strong>单位时间内传输二进制的位数，单位：b/s。我们下面提到的数据传输率，其实就是比特率。</p>
+<p><strong>注意：</strong>注意题目种码元传输率与比特率的转化。总结个k进制码元传输率与比特率转化公式</p>
+<script type="math/tex; mode=display">
+比特率=码元传输率\times\log_{2}k</script><h2 id="重要定理"><a href="#重要定理" class="headerlink" title="重要定理"></a>重要定理</h2><h3 id="奈奎斯特定理"><a href="#奈奎斯特定理" class="headerlink" title="奈奎斯特定理"></a>奈奎斯特定理</h3><p>奈奎斯特定理使用与理想低通的信道，即信道中没有噪声。（单位：b/s)</p>
+<script type="math/tex; mode=display">
+极限数据传输率=2W\log_{2}V</script><p>W：理想低通信道的带宽，单位是Hz</p>
+<p>2W：极限码元信道传输率，就是单位时间内最多能传输2W个码元。单位波特（Baud）</p>
+<p>V：码元离散电平的数目</p>
+<p>我们可发现，奈奎斯特定理这个公式，就跟前面提到的k进制码元传输率与比特率转化公式一模一样。</p>
+<h3 id="香浓定理"><a href="#香浓定理" class="headerlink" title="香浓定理"></a>香浓定理</h3><p>香浓定理给出了带宽受限且有高斯白噪声干扰的信道极限数据传输速率（单位：b/s)</p>
+<script type="math/tex; mode=display">
+极限数据传输率=W\log_{2}(1+S/N)</script><p>W：信道的带宽，单位是Hz</p>
+<p>S：信道传输信号的平均功率</p>
+<p>N：信道内内部的高斯声功率</p>
+<p>S/N：信噪比</p>
+<p>注意：题目条件可能会给信噪比可能用dB表示，而不是S/N，这里就要注意一个转换公式</p>
+<script type="math/tex; mode=display">
+信噪比(单位dB)=10\log_{10}(S/N)</script><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p><strong>奈奎斯特：</strong>从码元的角度出发，对码元的传输速率进行了限制，没有对信息传输速率进行限制，即没有对一个码元可以用多少个二进制位表示进行限制。</p>
+<p><strong>香浓定理：</strong>从信道的角度出发，根据信道带宽W与信噪比（10*lg(S/N)），对数据传输率进行限制。（这里我们发现，如果信道带宽与信噪比没有上线，数据传输率就没有上限，当然，这种情况在实际中不可能出现）</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码就是将数据转化为数字信号，用白话文讲就是，用什么样的信号表示0，用什么样的信号表示1。</p>
+<p>我觉得这部分比较内的就是，题目只给编码方式的简称，然后我们需要判断这是什么编码。所以记住简称，是很有必要的。</p>
+<p>看图加强理解</p>
+<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201120213609479.png" alt="image-20201120213609479"></p>
+<p><strong>归零编码(RZ)：</strong>高电平表示1，低电平表示0（也可以反过来）。然后就是每个始终周期的中间均要跳变到低电平，这就是所谓的归零，归零，归零，归归归归归零……-.-‘’</p>
+<p><strong>非归零编码(NRZ)：</strong>高电平表示1，低电平表示0（也可以反过来）。然后就没有像上面那样归零了。</p>
+<p><strong>反向非归零编码(NRZI)：</strong>0的时候，信号跳变，1的时候信号不跳变</p>
+<p><strong>曼切斯特编码 ：</strong>前低后高表示0，前高后低表示1。</p>
+<p><strong>差分曼切斯特编码：</strong>前半电平与上个持平，后半跳变表示1，前半就跳后半还跳表示0.</p>
+<p><strong>4B/5B编码：</strong>用5位码表示四位码。5位码有32种组合，四位码有16种，剩余16种用于表示控制码（帧开始和结束、线路状态信息等）。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>以太网中使用的是曼彻斯特编码，以太网中使用的是曼彻斯特编码，以太网中使用的是曼彻斯特编码</p>
+<p>特别强调这个是因为，有一年真题，给了一个某编码的波形图，是10BaseT网卡接收到的波形，则该比特串是什么。</p>
+<p>内心OS：？？这到底是什么编码？？题目怎么没给？？是曼彻斯特还是差分曼？？10BaseT又是什么鬼？？</p>
+<p>如果复习的比较全面，我们就知道10BaseT是数据传输速率位10Mbps基带传输以太网，指的是T表示双绞线，base表示基带传输。而以太网采用的是曼彻斯特编码。</p>
+<h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>刚刚我们已经知道怎么把数据转化成数字信号了，但是，在物理信道上，我们传输的是模拟信号，接下来我们要做的就是将数字信号转化成物理信号。emmm……我觉得这里主要还是记简称吧，知道所给调制方式名称，它的调制方法基本就是顾名思义了。</p>
+<p><strong>幅移键控(ASK)</strong>：调幅。这里我们想想三角函数一般形式：y(x)=Asin(x)，我们知道这里的A值会影响函数图像的幅度，所以看到A我们就联想到幅度，就是调幅。A应该是英文Amplitude(振幅)首字母。</p>
+<p><strong>频移键控(FSK)：</strong>调频。F，Frequency，频率。</p>
+<p><strong>相移键控(PSK)：</strong>调相。P，Phase，相位</p>
+<p><strong>正交振幅调制(QAM)：</strong>ASK与PSK的结合。设波特率为B，采用m个相位，每个相位n种振幅数据传输率为R</p>
+<script type="math/tex; mode=display">
+R=B\log_{2}(mn)</script><p>看图帮助理解</p>
+<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201120220255939.png" alt="image-20201120220255939"></p>
+<h2 id="交换方式"><a href="#交换方式" class="headerlink" title="交换方式"></a>交换方式</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>交换方式</th>
+<th>概述</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电路交换</td>
+<td>双方独占一条物理信道，连接建立，数据传输、连接释放</td>
+<td></td>
+</tr>
+<tr>
+<td>报文交换</td>
+<td>报文携带目的地址、源地址，报文交换在交换节点种采用存储转发</td>
+<td></td>
+</tr>
+<tr>
+<td>分组交换</td>
+<td>在报文交换的基础上，将一个数据报分成若干个小数据包，在每个小数据报加上必要的控制信息（源地址，目的地址，编号等）。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中，分组交换有个分为数据报和虚电路两种方式</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>概述</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据报</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>虚电路</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] 王道论坛. 2021年计算机网络考研复习指导[M]. 北京：电子工业出版社，2020.</p>
 <p>[2] 王相林. 计算机网络：原理、技术与应用[M]. 北京：机械工业出版社，2013.</p>
 ]]></content>
       <categories>
         <category>计算机网络</category>
       </categories>
       <tags>
+        <tag>考研408</tag>
         <tag>计算机网络</tag>
         <tag>协议</tag>
-        <tag>考研408</tag>
       </tags>
   </entry>
   <entry>
-    <title>矩阵各种公式归纳整理</title>
-    <url>/2020/10/13/post-1/</url>
-    <content><![CDATA[<p>矩阵这一章节涉及的公式和定理非常的多，而且极易混淆。熟悉这些公式定义，对后期解题起到非常重要的作用，所以有必要对这一章节的公式定理做一个归纳总结。</p>
+    <title>反常积分比较判别法</title>
+    <url>/2020/10/19/post-4/</url>
+    <content><![CDATA[<p>今年数学考研大纲做了大改，出来卷面结构、分值的变动之外，又增加了一条</p>
 <a id="more"></a>
-
-<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>A的转置的转置等于A本身<br>$$<br>(A^T)^T=A<br>$$<br>A+B的转置等于A的转置加B的转置<br>$$<br>(A+B)^T=A^T+B^T<br>$$</p>
-<h1 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h1><h1 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h1>]]></content>
+<h1 id="无穷区间上的反常积分"><a href="#无穷区间上的反常积分" class="headerlink" title="无穷区间上的反常积分"></a>无穷区间上的反常积分</h1><h2 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h2><script type="math/tex; mode=display">
+\int_a^{+\infty}\frac{1}{x^p}dx \begin{cases} p>1 收敛\\ p\leq1 发散 \end{cases}</script><p>(markdown打公式可真是费劲)</p>
+<h2 id="比较判别法"><a href="#比较判别法" class="headerlink" title="比较判别法"></a>比较判别法</h2><h2 id="比较判别法的极限形式"><a href="#比较判别法的极限形式" class="headerlink" title="比较判别法的极限形式"></a>比较判别法的极限形式</h2><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h1 id="无界函数的反常积分"><a href="#无界函数的反常积分" class="headerlink" title="无界函数的反常积分"></a>无界函数的反常积分</h1><h2 id="常用结论-1"><a href="#常用结论-1" class="headerlink" title="常用结论"></a>常用结论</h2><script type="math/tex; mode=display">
+\int_a^b\frac{1}{(x-a)^p}dx \begin{cases} p<1 收敛\\ p\geq1 发散 \end{cases} （左端无界）</script><script type="math/tex; mode=display">
+\int_a^b\frac{1}{(b-x)^p}dx \begin{cases} p<1 收敛\\ p\geq1 发散 \end{cases} （右端无界）</script><h2 id="比较判别法-1"><a href="#比较判别法-1" class="headerlink" title="比较判别法"></a>比较判别法</h2><h2 id="比较判别法的极限形式-1"><a href="#比较判别法的极限形式-1" class="headerlink" title="比较判别法的极限形式"></a>比较判别法的极限形式</h2><h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h2><h1 id="真题"><a href="#真题" class="headerlink" title="真题"></a>真题</h1><script type="math/tex; mode=display">
+\begin{array}{2}
+(2006 \ 数学一) 反常积分\int_a^{+\infty}\frac{1}{x^a(1+x)^b}dx 收敛，则(  )\\
+A \ \ \ \ a<1,b>1.\ \ \ \ \ \  \ \ \ \ B\ \ \ \ a>1,b>1.\ \ \ \ \ \  \ \ \ \
+C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
+\end{array}</script>]]></content>
       <categories>
-        <category>线性代数</category>
-      </categories>
-      <tags>
-        <tag>矩阵公式</tag>
-        <tag>考研数学</tag>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性代数中秩的总结</title>
-    <url>/2020/10/14/post-2/</url>
-    <content><![CDATA[<p>在线性代数中，秩这个概念几乎是贯穿始终。无论是解方程组</p>
-<a id="more"></a>
-
-<h1 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h1><h1 id="向量组的秩"><a href="#向量组的秩" class="headerlink" title="向量组的秩"></a>向量组的秩</h1><h1 id="三秩相等"><a href="#三秩相等" class="headerlink" title="三秩相等"></a>三秩相等</h1><h1 id="二次型的秩"><a href="#二次型的秩" class="headerlink" title="二次型的秩"></a>二次型的秩</h1><h1 id="与秩有关的公式、定理、推理"><a href="#与秩有关的公式、定理、推理" class="headerlink" title="与秩有关的公式、定理、推理"></a>与秩有关的公式、定理、推理</h1>]]></content>
-      <categories>
-        <category>线性代数</category>
+        <category>高等数学</category>
       </categories>
       <tags>
         <tag>考研数学</tag>
-        <tag>线性代数</tag>
-        <tag>秩</tag>
+        <tag>高等数学</tag>
+        <tag>反常积分</tag>
+        <tag>比较判别法</tag>
       </tags>
   </entry>
 </search>
