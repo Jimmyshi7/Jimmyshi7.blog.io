@@ -57,9 +57,9 @@
       <category domain="http://yoursite.com/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</category>
       
       
-      <category domain="http://yoursite.com/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</category>
-      
       <category domain="http://yoursite.com/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</category>
+      
+      <category domain="http://yoursite.com/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</category>
       
       <category domain="http://yoursite.com/tags/%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86/">反常积分</category>
       
@@ -140,9 +140,9 @@
       <category domain="http://yoursite.com/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</category>
       
       
-      <category domain="http://yoursite.com/tags/%E7%9F%A9%E9%98%B5%E5%85%AC%E5%BC%8F/">矩阵公式</category>
-      
       <category domain="http://yoursite.com/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</category>
+      
+      <category domain="http://yoursite.com/tags/%E7%9F%A9%E9%98%B5%E5%85%AC%E5%BC%8F/">矩阵公式</category>
       
       <category domain="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</category>
       
