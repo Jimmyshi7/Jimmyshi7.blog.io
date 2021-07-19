@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>反常积分比较判别法</title>
-    <url>/2020/10/19/post-4/</url>
-    <content><![CDATA[<p>今年数学考研大纲做了大改，出来卷面结构、分值的变动之外，又增加了一条</p>
-<a id="more"></a>
-<h1 id="无穷区间上的反常积分"><a href="#无穷区间上的反常积分" class="headerlink" title="无穷区间上的反常积分"></a>无穷区间上的反常积分</h1><h2 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h2><script type="math/tex; mode=display">
-\int_a^{+\infty}\frac{1}{x^p}dx \begin{cases} p>1 收敛\\ p\leq1 发散 \end{cases}</script><p>(markdown打公式可真是费劲)</p>
-<h2 id="比较判别法"><a href="#比较判别法" class="headerlink" title="比较判别法"></a>比较判别法</h2><h2 id="比较判别法的极限形式"><a href="#比较判别法的极限形式" class="headerlink" title="比较判别法的极限形式"></a>比较判别法的极限形式</h2><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h1 id="无界函数的反常积分"><a href="#无界函数的反常积分" class="headerlink" title="无界函数的反常积分"></a>无界函数的反常积分</h1><h2 id="常用结论-1"><a href="#常用结论-1" class="headerlink" title="常用结论"></a>常用结论</h2><script type="math/tex; mode=display">
-\int_a^b\frac{1}{(x-a)^p}dx \begin{cases} p<1 收敛\\ p\geq1 发散 \end{cases} （左端无界）</script><script type="math/tex; mode=display">
-\int_a^b\frac{1}{(b-x)^p}dx \begin{cases} p<1 收敛\\ p\geq1 发散 \end{cases} （右端无界）</script><h2 id="比较判别法-1"><a href="#比较判别法-1" class="headerlink" title="比较判别法"></a>比较判别法</h2><h2 id="比较判别法的极限形式-1"><a href="#比较判别法的极限形式-1" class="headerlink" title="比较判别法的极限形式"></a>比较判别法的极限形式</h2><h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h2><h1 id="真题"><a href="#真题" class="headerlink" title="真题"></a>真题</h1><script type="math/tex; mode=display">
-\begin{array}{2}
-(2006 \ 数学一) 反常积分\int_a^{+\infty}\frac{1}{x^a(1+x)^b}dx 收敛，则(  )\\
-A \ \ \ \ a<1,b>1.\ \ \ \ \ \  \ \ \ \ B\ \ \ \ a>1,b>1.\ \ \ \ \ \  \ \ \ \
-C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
-\end{array}</script>]]></content>
+    <title>The First Post</title>
+    <url>/2020/08/16/The-First-Post/</url>
+    <content><![CDATA[<h1 id="The-First-Post"><a href="#The-First-Post" class="headerlink" title="The First Post"></a>The First Post</h1><p>从大一开始就想要搭建自己的博客。起初的想法是自己手撸代码，前端后台数据库一点点地搭建起来。之后看了别人的博客才发现自己太天真，大家的博客并不是代码一点一点地拼起来的。尤其是看了我舍友TOM搭建的博客之后，我便放弃手撸代码的想法，转而使用博客框架。TOM的博客搭的不错，内容也十分丰富，让我深受启发。这里PO个传送门：<a href="http://newbeetom.top/">http://newbeetom.top/</a></p>
+<p>自从三月份搭完Hexo 就一直搁置着。毕竟上半年一直在准备竞赛，下半年又在准备考研，没什么精力去装扮博客。所以现在这个博客看起来还是平平无奇。等初试后再花点时间搞搞吧。</p>
+<p>现在已经是冲刺阶段了，但是总觉得自己的知识点还是很零碎。其实还是缺乏归纳和总结。然后我发现，我可以通过写博客来对一些知识点进行归纳总结，从而深化自己的理解。</p>
+<p>接下来我会在复习过程中逐渐将我一些薄弱的知识点进行归纳总结后POST出来。</p>
+<p>最后也祝自己能够顺利上岸，祝愿跟我一起奋斗的研友们都能顺利上岸！</p>
+<p>TARGET:ECNU!</p>
+]]></content>
       <categories>
-        <category>高等数学</category>
+        <category>live</category>
       </categories>
       <tags>
-        <tag>高等数学</tag>
-        <tag>考研数学</tag>
-        <tag>反常积分</tag>
-        <tag>比较判别法</tag>
+        <tag>live</tag>
+        <tag>考研</tag>
       </tags>
   </entry>
   <entry>
@@ -80,24 +73,6 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
       </tags>
   </entry>
   <entry>
-    <title>The First Post</title>
-    <url>/2020/08/16/The-First-Post/</url>
-    <content><![CDATA[<h1 id="The-First-Post"><a href="#The-First-Post" class="headerlink" title="The First Post"></a>The First Post</h1><p>从大一开始就想要搭建自己的博客。起初的想法是自己手撸代码，前端后台数据库一点点地搭建起来。之后看了别人的博客才发现自己太天真，大家的博客并不是代码一点一点地拼起来的。尤其是看了我舍友TOM搭建的博客之后，我便放弃手撸代码的想法，转而使用博客框架。TOM的博客搭的不错，内容也十分丰富，让我深受启发。这里PO个传送门：<a href="http://newbeetom.top/">http://newbeetom.top/</a></p>
-<p>自从三月份搭完Hexo 就一直搁置着。毕竟上半年一直在准备竞赛，下半年又在准备考研，没什么精力去装扮博客。所以现在这个博客看起来还是平平无奇。等初试后再花点时间搞搞吧。</p>
-<p>现在已经是冲刺阶段了，但是总觉得自己的知识点还是很零碎。其实还是缺乏归纳和总结。然后我发现，我可以通过写博客来对一些知识点进行归纳总结，从而深化自己的理解。</p>
-<p>接下来我会在复习过程中逐渐将我一些薄弱的知识点进行归纳总结后POST出来。</p>
-<p>最后也祝自己能够顺利上岸，祝愿跟我一起奋斗的研友们都能顺利上岸！</p>
-<p>TARGET:ECNU!</p>
-]]></content>
-      <categories>
-        <category>live</category>
-      </categories>
-      <tags>
-        <tag>live</tag>
-        <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>矩阵各种公式归纳整理</title>
     <url>/2020/10/13/post-1/</url>
     <content><![CDATA[<p>矩阵这一章节涉及的公式和定理非常的多，而且极易混淆。熟悉这些公式定义，对后期解题起到非常重要的作用，所以有必要对这一章节的公式定理做一个归纳总结。</p>
@@ -111,8 +86,8 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
         <category>线性代数</category>
       </categories>
       <tags>
-        <tag>考研数学</tag>
         <tag>矩阵公式</tag>
+        <tag>考研数学</tag>
         <tag>线性代数</tag>
       </tags>
   </entry>
@@ -144,6 +119,31 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
         <tag>数据结构</tag>
         <tag>考研408</tag>
         <tag>时间复杂度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>反常积分比较判别法</title>
+    <url>/2020/10/19/post-4/</url>
+    <content><![CDATA[<p>今年数学考研大纲做了大改，出来卷面结构、分值的变动之外，又增加了一条</p>
+<a id="more"></a>
+<h1 id="无穷区间上的反常积分"><a href="#无穷区间上的反常积分" class="headerlink" title="无穷区间上的反常积分"></a>无穷区间上的反常积分</h1><h2 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h2><script type="math/tex; mode=display">
+\int_a^{+\infty}\frac{1}{x^p}dx \begin{cases} p>1 收敛\\ p\leq1 发散 \end{cases}</script><p>(markdown打公式可真是费劲)</p>
+<h2 id="比较判别法"><a href="#比较判别法" class="headerlink" title="比较判别法"></a>比较判别法</h2><h2 id="比较判别法的极限形式"><a href="#比较判别法的极限形式" class="headerlink" title="比较判别法的极限形式"></a>比较判别法的极限形式</h2><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h1 id="无界函数的反常积分"><a href="#无界函数的反常积分" class="headerlink" title="无界函数的反常积分"></a>无界函数的反常积分</h1><h2 id="常用结论-1"><a href="#常用结论-1" class="headerlink" title="常用结论"></a>常用结论</h2><script type="math/tex; mode=display">
+\int_a^b\frac{1}{(x-a)^p}dx \begin{cases} p<1 收敛\\ p\geq1 发散 \end{cases} （左端无界）</script><script type="math/tex; mode=display">
+\int_a^b\frac{1}{(b-x)^p}dx \begin{cases} p<1 收敛\\ p\geq1 发散 \end{cases} （右端无界）</script><h2 id="比较判别法-1"><a href="#比较判别法-1" class="headerlink" title="比较判别法"></a>比较判别法</h2><h2 id="比较判别法的极限形式-1"><a href="#比较判别法的极限形式-1" class="headerlink" title="比较判别法的极限形式"></a>比较判别法的极限形式</h2><h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h2><h1 id="真题"><a href="#真题" class="headerlink" title="真题"></a>真题</h1><script type="math/tex; mode=display">
+\begin{array}{2}
+(2006 \ 数学一) 反常积分\int_a^{+\infty}\frac{1}{x^a(1+x)^b}dx 收敛，则(  )\\
+A \ \ \ \ a<1,b>1.\ \ \ \ \ \  \ \ \ \ B\ \ \ \ a>1,b>1.\ \ \ \ \ \  \ \ \ \
+C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
+\end{array}</script>]]></content>
+      <categories>
+        <category>高等数学</category>
+      </categories>
+      <tags>
+        <tag>考研数学</tag>
+        <tag>高等数学</tag>
+        <tag>反常积分</tag>
+        <tag>比较判别法</tag>
       </tags>
   </entry>
   <entry>
