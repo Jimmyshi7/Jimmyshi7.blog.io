@@ -1141,6 +1141,13 @@ pre .javascript .function {
   margin: 0 auto;
   max-width: 120px;
   padding: 2px;
+  border-radius: 50%;
+}
+.site-author-image {
+  transition: transform 1s ease-out;
+}
+.site-author-image:hover {
+  transform: rotateZ(360deg);
 }
 .site-author-name {
   color: var(--text-color);
@@ -1168,7 +1175,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff1738;
+  background: #5762e2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2707,4 +2714,25 @@ mjx-container + br {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.fa-bilibili {
+  background: url("/images/bilibili.svg");
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  height: 1rem;
+  width: 1rem;
+}
+@font-face {
+  font-family: "iconfont"; /* Project id 2687952 */
+  src: url("//at.alicdn.com/t/font_2687952_l43igc3rrl.woff2?t=1626770118818") format('woff2'), url("//at.alicdn.com/t/font_2687952_l43igc3rrl.woff?t=1626770118818") format('woff'), url("//at.alicdn.com/t/font_2687952_l43igc3rrl.ttf?t=1626770118818") format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-bilibili:before {
+  content: "\e68f";
 }
