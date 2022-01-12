@@ -6,7 +6,7 @@
   <link href="http://blog.deltaphi.com.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.deltaphi.com.cn/"/>
-  <updated>2020-10-25T14:35:49.659Z</updated>
+  <updated>2022-01-12T05:06:13.409Z</updated>
   <id>http://blog.deltaphi.com.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新的篇章</title>
+    <link href="http://blog.deltaphi.com.cn/2022/01/12/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/"/>
+    <id>http://blog.deltaphi.com.cn/2022/01/12/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</id>
+    <published>2022-01-12T04:43:29.000Z</published>
+    <updated>2022-01-12T05:06:13.409Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;插入图片&quot;&gt;&lt;a href=&quot;#插入图片&quot; class=&quot;headerlink&quot; title=&quot;插入图片&quot;&gt;&lt;/a&gt;插入图片&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/.cn//image-20220112124431176.png&quot; alt=&quot;image-202201</summary>
+      
+    
+    
+    
+    
+    <category term="life" scheme="http://blog.deltaphi.com.cn/tags/life/"/>
+    
+  </entry>
   
   <entry>
     <title>KMP算法总结</title>

@@ -349,6 +349,7 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -411,7 +412,7 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -424,7 +425,7 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -603,6 +604,26 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
     
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : '6a26605b49961ca6ea21d39502bb64c1',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
