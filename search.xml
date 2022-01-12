@@ -242,7 +242,7 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
 <h3 id="后退N帧协议（GBN）"><a href="#后退N帧协议（GBN）" class="headerlink" title="后退N帧协议（GBN）"></a>后退N帧协议（GBN）</h3><p>接受方一个窗口，发送方最多(2^n)-1个窗口</p>
 <h3 id="选择重传协议（SR）"><a href="#选择重传协议（SR）" class="headerlink" title="选择重传协议（SR）"></a>选择重传协议（SR）</h3><p>发送方和接受方最大2^(n-1)个窗口</p>
 <h2 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h2><h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><h4 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h4><h4 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h4><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h2><h3 id="IPv4分组格式"><a href="#IPv4分组格式" class="headerlink" title="IPv4分组格式"></a>IPv4分组格式</h3><p>IPv4首部格式如下所示。首部分为固定部分和可变部分，其中固定部分为20B。</p>
-<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201124143517358.png" alt="image-20201124143517358"></p>
+<p><img src="imgs\image-20201124143517358.png" alt="image-20201124143517358"></p>
 <p>几个重要字段含义</p>
 <div class="table-container">
 <table>
