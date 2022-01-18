@@ -1,41 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>矩阵各种公式归纳整理</title>
-    <url>/2020/10/13/post-1/</url>
-    <content><![CDATA[<p>矩阵这一章节涉及的公式和定理非常的多，而且极易混淆。熟悉这些公式定义，对后期解题起到非常重要的作用，所以有必要对这一章节的公式定理做一个归纳总结。</p>
-<a id="more"></a>
-<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>A的转置的转置等于A本身</p>
-<script type="math/tex; mode=display">
-(A^T)^T=A</script><p>A+B的转置等于A的转置加B的转置</p>
-<script type="math/tex; mode=display">
-(A+B)^T=A^T+B^T</script><h1 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h1><h1 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h1>]]></content>
-      <categories>
-        <category>线性代数</category>
-      </categories>
-      <tags>
-        <tag>矩阵公式</tag>
-        <tag>考研数学</tag>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The First Post</title>
-    <url>/2020/08/16/The-First-Post/</url>
-    <content><![CDATA[<h1 id="The-First-Post"><a href="#The-First-Post" class="headerlink" title="The First Post"></a>The First Post</h1><p>从大一开始就想要搭建自己的博客。起初的想法是自己手撸代码，前端后台数据库一点点地搭建起来。之后看了别人的博客才发现自己太天真，大家的博客并不是代码一点一点地拼起来的。尤其是看了我舍友TOM搭建的博客之后，我便放弃手撸代码的想法，转而使用博客框架。TOM的博客搭的不错，内容也十分丰富，让我深受启发。这里PO个传送门：<a href="http://newbeetom.top/" target="_blank" rel="noopener">http://newbeetom.top/</a></p>
-<p>自从三月份搭完Hexo 就一直搁置着。毕竟上半年一直在准备竞赛，下半年又在准备考研，没什么精力去装扮博客。所以现在这个博客看起来还是平平无奇。等初试后再花点时间搞搞吧。</p>
-<p>现在已经是冲刺阶段了，但是总觉得自己的知识点还是很零碎。其实还是缺乏归纳和总结。然后我发现，我可以通过写博客来对一些知识点进行归纳总结，从而深化自己的理解。</p>
-<p>接下来我会在复习过程中逐渐将我一些薄弱的知识点进行归纳总结后POST出来。</p>
-<p>最后也祝自己能够顺利上岸，祝愿跟我一起奋斗的研友们都能顺利上岸！</p>
-<p>TARGET:ECNU!</p>
+    <title>new_post</title>
+    <url>/2022/01/12/new-post/</url>
+    <content><![CDATA[<h1 id="新图片"><a href="#新图片" class="headerlink" title="新图片"></a>新图片</h1><a id="more"></a>
+<p><img src="image-20220112124431176.png" alt="image-20220112124431176"></p>
 ]]></content>
-      <categories>
-        <category>live</category>
-      </categories>
-      <tags>
-        <tag>live</tag>
-        <tag>考研</tag>
-      </tags>
   </entry>
   <entry>
     <title>KMP算法总结</title>
@@ -92,6 +62,24 @@
       </tags>
   </entry>
   <entry>
+    <title>The First Post</title>
+    <url>/2020/08/16/The-First-Post/</url>
+    <content><![CDATA[<h1 id="The-First-Post"><a href="#The-First-Post" class="headerlink" title="The First Post"></a>The First Post</h1><p>从大一开始就想要搭建自己的博客。起初的想法是自己手撸代码，前端后台数据库一点点地搭建起来。之后看了别人的博客才发现自己太天真，大家的博客并不是代码一点一点地拼起来的。尤其是看了我舍友TOM搭建的博客之后，我便放弃手撸代码的想法，转而使用博客框架。TOM的博客搭的不错，内容也十分丰富，让我深受启发。这里PO个传送门：<a href="http://newbeetom.top/" target="_blank" rel="noopener">http://newbeetom.top/</a></p>
+<p>自从三月份搭完Hexo 就一直搁置着。毕竟上半年一直在准备竞赛，下半年又在准备考研，没什么精力去装扮博客。所以现在这个博客看起来还是平平无奇。等初试后再花点时间搞搞吧。</p>
+<p>现在已经是冲刺阶段了，但是总觉得自己的知识点还是很零碎。其实还是缺乏归纳和总结。然后我发现，我可以通过写博客来对一些知识点进行归纳总结，从而深化自己的理解。</p>
+<p>接下来我会在复习过程中逐渐将我一些薄弱的知识点进行归纳总结后POST出来。</p>
+<p>最后也祝自己能够顺利上岸，祝愿跟我一起奋斗的研友们都能顺利上岸！</p>
+<p>TARGET:ECNU!</p>
+]]></content>
+      <categories>
+        <category>live</category>
+      </categories>
+      <tags>
+        <tag>live</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性代数中秩的总结</title>
     <url>/2020/10/14/post-2/</url>
     <content><![CDATA[<p>在线性代数中，秩这个概念几乎是贯穿始终。无论是解方程组</p>
@@ -101,9 +89,28 @@
         <category>线性代数</category>
       </categories>
       <tags>
-        <tag>考研数学</tag>
         <tag>线性代数</tag>
+        <tag>考研数学</tag>
         <tag>秩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩阵各种公式归纳整理</title>
+    <url>/2020/10/13/post-1/</url>
+    <content><![CDATA[<p>矩阵这一章节涉及的公式和定理非常的多，而且极易混淆。熟悉这些公式定义，对后期解题起到非常重要的作用，所以有必要对这一章节的公式定理做一个归纳总结。</p>
+<a id="more"></a>
+<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>A的转置的转置等于A本身</p>
+<script type="math/tex; mode=display">
+(A^T)^T=A</script><p>A+B的转置等于A的转置加B的转置</p>
+<script type="math/tex; mode=display">
+(A+B)^T=A^T+B^T</script><h1 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h1><h1 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h1>]]></content>
+      <categories>
+        <category>线性代数</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+        <tag>考研数学</tag>
+        <tag>矩阵公式</tag>
       </tags>
   </entry>
   <entry>
@@ -144,6 +151,15 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
         <tag>数据结构</tag>
         <tag>考研408</tag>
         <tag>时间复杂度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新的篇章</title>
+    <url>/2022/01/12/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><p><img src="/images/image-20220112124431176.png" alt="image-20220112124431176"></p>
+]]></content>
+      <tags>
+        <tag>life</tag>
       </tags>
   </entry>
   <entry>
@@ -242,7 +258,7 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
 <h3 id="后退N帧协议（GBN）"><a href="#后退N帧协议（GBN）" class="headerlink" title="后退N帧协议（GBN）"></a>后退N帧协议（GBN）</h3><p>接受方一个窗口，发送方最多(2^n)-1个窗口</p>
 <h3 id="选择重传协议（SR）"><a href="#选择重传协议（SR）" class="headerlink" title="选择重传协议（SR）"></a>选择重传协议（SR）</h3><p>发送方和接受方最大2^(n-1)个窗口</p>
 <h2 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h2><h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><h4 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h4><h4 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h4><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h2><h3 id="IPv4分组格式"><a href="#IPv4分组格式" class="headerlink" title="IPv4分组格式"></a>IPv4分组格式</h3><p>IPv4首部格式如下所示。首部分为固定部分和可变部分，其中固定部分为20B。</p>
-<p><img src="imgs\image-20201124143517358.png" alt="image-20201124143517358"></p>
+<p><img src="image-20201124143517358.png" alt="image-20201124143517358"></p>
 <p>几个重要字段含义</p>
 <div class="table-container">
 <table>
@@ -397,7 +413,7 @@ C \ \ \ \ a<1,a+b>1.\ \ \ \ \ \  \ \ \ \ D\ \ \ \ a>1,a+b>1.
 <td>交换内容</td>
 <td>当前本路由器知道的全部信息，即自己的路由表</td>
 <td>与本路由器相邻的所有路由器的链路状态</td>
-<td>首次：整个路由表<br />非首次：变化部分</td>
+<td>首次：整个路由表<br>非首次：变化部分</td>
 </tr>
 </tbody>
 </table>
@@ -480,7 +496,7 @@ S \cdot T= \frac {1} {m} \sum_{i=0}^mS_iT_i</script><p>那么，如果A要发送
 <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码就是将数据转化为数字信号，用白话文讲就是，用什么样的信号表示0，用什么样的信号表示1。</p>
 <p>我觉得这部分比较内的就是，题目只给编码方式的简称，然后我们需要判断这是什么编码。所以记住简称，是很有必要的。</p>
 <p>看图加强理解</p>
-<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201120213609479.png" alt="image-20201120213609479"></p>
+<p><img src="Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201120213609479.png" alt="image-20201120213609479"></p>
 <p><strong>归零编码(RZ)：</strong>高电平表示1，低电平表示0（也可以反过来）。然后就是每个始终周期的中间均要跳变到低电平，这就是所谓的归零，归零，归零，归归归归归零……-.-‘’</p>
 <p><strong>非归零编码(NRZ)：</strong>高电平表示1，低电平表示0（也可以反过来）。然后就没有像上面那样归零了。</p>
 <p><strong>反向非归零编码(NRZI)：</strong>0的时候，信号跳变，1的时候信号不跳变</p>
@@ -498,7 +514,7 @@ S \cdot T= \frac {1} {m} \sum_{i=0}^mS_iT_i</script><p>那么，如果A要发送
 <p><strong>正交振幅调制(QAM)：</strong>ASK与PSK的结合。设波特率为B，采用m个相位，每个相位n种振幅数据传输率为R</p>
 <script type="math/tex; mode=display">
 R=B\log_{2}(mn)</script><p>看图帮助理解</p>
-<p><img src="C:\Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201120220255939.png" alt="image-20201120220255939"></p>
+<p><img src="Users\Jimmy\AppData\Roaming\Typora\typora-user-images\image-20201120220255939.png" alt="image-20201120220255939"></p>
 <h2 id="交换方式"><a href="#交换方式" class="headerlink" title="交换方式"></a>交换方式</h2><div class="table-container">
 <table>
 <thead>
@@ -560,21 +576,5 @@ R=B\log_{2}(mn)</script><p>看图帮助理解</p>
         <tag>计算机网络</tag>
         <tag>协议</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新的篇章</title>
-    <url>/2022/01/12/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><p><img src="/images/image-20220112124431176.png" alt="image-20220112124431176"></p>
-]]></content>
-      <tags>
-        <tag>life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>new_post</title>
-    <url>/2022/01/12/new-post/</url>
-    <content><![CDATA[<h1 id="新图片"><a href="#新图片" class="headerlink" title="新图片"></a>新图片</h1><a id="more"></a>
-<p><img src="image-20220112124431176.png" alt="image-20220112124431176"></p>
-]]></content>
   </entry>
 </search>
