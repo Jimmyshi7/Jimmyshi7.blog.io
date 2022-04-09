@@ -6,7 +6,7 @@
   <link href="http://blog.deltaphi.com.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.deltaphi.com.cn/"/>
-  <updated>2022-01-12T05:43:05.898Z</updated>
+  <updated>2022-01-20T07:41:12.521Z</updated>
   <id>http://blog.deltaphi.com.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swin-Transformer 代码阅读笔记</title>
+    <link href="http://blog.deltaphi.com.cn/2022/01/20/Swin-Transformer-%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.deltaphi.com.cn/2022/01/20/Swin-Transformer-%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-01-20T07:32:26.000Z</published>
+    <updated>2022-01-20T07:41:12.521Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Swin-Transformer 应该是2021 计算机视觉最火的网络架构了，它在图像分类、检测、分割等任务上都展现出了十分优秀的性能，并且可以作为一个视觉任务的通用主干网络，用于各种视觉任务&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="代码笔记" scheme="http://blog.deltaphi.com.cn/categories/%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.deltaphi.com.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="siwn-transformer" scheme="http://blog.deltaphi.com.cn/tags/siwn-transformer/"/>
+    
+    <category term="代码阅读" scheme="http://blog.deltaphi.com.cn/tags/%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    
+    <category term="神经网络" scheme="http://blog.deltaphi.com.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>new_post</title>
